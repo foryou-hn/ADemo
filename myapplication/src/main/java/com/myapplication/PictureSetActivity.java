@@ -10,9 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.myapplication.adapter.PicSetAdapter;
-import com.myapplication.base.ResultItem;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.myapplication.bean.ResultItem;
 import com.myapplication.bean.PictureSetItem;
 import com.myapplication.net.ReqCallBack;
 import com.myapplication.net.RequestManager;
@@ -96,7 +98,16 @@ public class PictureSetActivity extends AppCompatActivity implements BaseQuickAd
             pictureSetItems.add(new PictureSetItem(id, title, imgurl));
         }
         if (adapter == null) {
-            adapter = new PicSetAdapter(R.layout.pic_set_item_view, pictureSetItems);
+            adapter = new BaseQuickAdapter<PictureSetItem, BaseViewHolder>(R.layout.pic_set_item_view, pictureSetItems) {
+                @Override
+                protected void convert(BaseViewHolder helper, PictureSetItem item) {
+                    helper.setText(R.id.text, item.title);
+                    Glide.with(mContext)
+                            .load(item.url)
+                            .apply(RequestOptions.errorOf(R.mipmap.ic_launcher_round).centerCrop())
+                            .into((ImageView) helper.getView(R.id.icon));
+                }
+            };
             adapter.setOnLoadMoreListener(this, rv_type);
             adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
             adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {

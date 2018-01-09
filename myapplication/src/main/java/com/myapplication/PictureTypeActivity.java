@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.myapplication.adapter.PicTypeAdapter;
-import com.myapplication.base.ResultItem;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.myapplication.bean.ResultItem;
 import com.myapplication.bean.PictureTypeItem;
 import com.myapplication.net.ReqCallBack;
 import com.myapplication.net.RequestManager;
@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author : chenhao
+ */
 public class PictureTypeActivity extends AppCompatActivity {
 
     private RecyclerView rv_type;
@@ -81,7 +84,12 @@ public class PictureTypeActivity extends AppCompatActivity {
             String title = item.getString("title");
             pictureTypeItems.add(new PictureTypeItem(id, title));
         }
-        BaseQuickAdapter adapter = new PicTypeAdapter(R.layout.pic_type_item_view, pictureTypeItems);
+        BaseQuickAdapter adapter = new BaseQuickAdapter<PictureTypeItem, BaseViewHolder>(R.layout.pic_type_item_view, pictureTypeItems) {
+            @Override
+            protected void convert(BaseViewHolder helper, PictureTypeItem item) {
+                helper.setText(R.id.text, item.title);
+            }
+        };
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

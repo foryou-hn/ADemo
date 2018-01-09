@@ -21,6 +21,9 @@ import com.myapplication.fragment.PageFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author : chenhao
+ */
 public class TabLayoutActivity extends AppCompatActivity {
 
     private TabLayout mTabLayout;

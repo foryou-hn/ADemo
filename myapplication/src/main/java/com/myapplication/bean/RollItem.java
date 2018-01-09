@@ -2,7 +2,8 @@ package com.myapplication.bean;
 
 
 /**
- * Created by ch on 2016/5/4.
+ * 首页轮播图的bean类
+ * @author : chenhao
  */
 public class RollItem {
 	/** 轮播图文字*/

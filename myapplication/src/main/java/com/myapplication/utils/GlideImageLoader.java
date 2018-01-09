@@ -8,7 +8,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.myapplication.view.BannerLayout;
 
 /**
- * Created by Administrator on 2016/12/21 0021.
+ * 图片加载类
+ * @author : chenhao
  */
 
 public class GlideImageLoader implements BannerLayout.ImageLoader {

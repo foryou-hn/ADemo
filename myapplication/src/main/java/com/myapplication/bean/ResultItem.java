@@ -1,4 +1,4 @@
-package com.myapplication.base;
+package com.myapplication.bean;
 
 import android.text.TextUtils;
 import android.util.Base64;
@@ -17,12 +17,8 @@ import java.util.Map;
 
 
 /**
- * FileName : ResultItem.java Description : 一个工动态bean的处理类
- * 
- * @Copyright : GL. All Rights Reserved
- * @Company : 深圳市鸿宇时代信息技术有限公司
- * @author : 刘剑
- * @version : 1.0 Create Date : 2014-4-9 下午2:16:27
+ * 返回数据的工具bean类
+ * @author : chenhao
  **/
 @SuppressWarnings("all")
 public class ResultItem implements Serializable {

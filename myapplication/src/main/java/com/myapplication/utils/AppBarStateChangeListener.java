@@ -3,11 +3,8 @@ package com.myapplication.utils;
 import android.support.design.widget.AppBarLayout;
 
 /**
- * 文 件 名：AppBarStateChangeListener
- * 描    述：
- * 作    者：chenhao
- * 时    间：2017/10/24
- * 版    权：v1.0
+ * AppBarStateChangeListener
+ * @author : chenhao
  */
 
 public abstract class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedListener {

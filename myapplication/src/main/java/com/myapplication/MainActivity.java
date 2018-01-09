@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.myapplication.adapter.HomeAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.myapplication.bean.HomeItem;
 import com.myapplication.bean.RollItem;
 import com.myapplication.utils.GlideImageLoader;
@@ -21,6 +21,10 @@ import com.myapplication.view.BannerLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MainActivity
+ * @author : chenhao
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final Class<?>[] ACTIVITY = {PictureTypeActivity.class, TabLayoutActivity.class};
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
     }
 
     private void initView() {
@@ -53,7 +58,14 @@ public class MainActivity extends AppCompatActivity {
         initTitleBar();
 
         initBannerData();
-        BaseQuickAdapter homeAdapter = new HomeAdapter(R.layout.home_item_view, getData());
+        BaseQuickAdapter homeAdapter = new BaseQuickAdapter<HomeItem, BaseViewHolder>(R.layout.home_item_view, getData()) {
+
+            @Override
+            protected void convert(BaseViewHolder helper, HomeItem item) {
+                helper.setText(R.id.text, item.getTitle());
+                helper.setImageResource(R.id.icon, item.getImageResource());
+            }
+        };
         homeAdapter.openLoadAnimation();
 //        View top = getLayoutInflater().inflate(R.layout.top_view, (ViewGroup) mRecyclerView.getParent(), false);
 //        BannerLayout bannerLayout = (BannerLayout) top.findViewById(R.id.banner);

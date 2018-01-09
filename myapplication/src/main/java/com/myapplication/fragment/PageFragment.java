@@ -1,7 +1,5 @@
 package com.myapplication.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,10 +9,12 @@ import android.widget.TextView;
 
 import com.myapplication.R;
 
+/**
+ * TabLayout的子页面
+ * @author : chenhao
+ */
 public class PageFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
-
-    // TODO: Rename and change types of parameters
     private int mParam1;
 
     public PageFragment() {

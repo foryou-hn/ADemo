@@ -1,7 +1,8 @@
 package com.myapplication.bean;
 
 /**
- * https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+ * 首页九宫格bean类
+ * @author : chenhao
  */
 public class HomeItem {
     private String title;

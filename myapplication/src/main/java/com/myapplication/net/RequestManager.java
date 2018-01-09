@@ -5,10 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.myapplication.base.ResultItem;
+import com.myapplication.bean.ResultItem;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +25,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * 文 件 名：RequestManager
- * 描    述：
- * 作    者：chenhao
- * 时    间：2017/10/25
- * 版    权：v1.0
+ * 发送请求类
+ * @author : chenhao
  */
 
 public class RequestManager {

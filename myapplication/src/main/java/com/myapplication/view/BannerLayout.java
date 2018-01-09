@@ -33,11 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 文 件 名：BannerLayout
- * 描    述：
- * 作    者：chenhao
- * 时    间：2017/9/1
- * 版    权：v1.0
+ * 轮播图
+ * @author : chenhao
  */
 
 public class BannerLayout extends RelativeLayout {

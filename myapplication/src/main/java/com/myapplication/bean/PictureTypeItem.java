@@ -1,11 +1,8 @@
 package com.myapplication.bean;
 
 /**
- * 文 件 名：PictureTypeItem
- * 描    述：
- * 作    者：chenhao
- * 时    间：2017/10/25
- * 版    权：v1.0
+ * 图片类型bean类
+ * @author : chenhao
  */
 
 public class PictureTypeItem {
